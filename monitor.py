@@ -20,7 +20,7 @@ RAM_THRESHOLD = 20
 
 def send_alert(message):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    requests.post(url, json={"chat_id": CHAT_ID, "text": message})
+    requests.post(url, json={"chat_id": CHAT_ID, "text": message}, timeout=10)
 
 def log_stats(cpu, ram, disk):
     timestamp = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
@@ -39,5 +39,4 @@ def check_health():
     if ram > RAM_THRESHOLD:
         send_alert(f"ALERT: High RAM usage detected: {ram}%")
 
-if __name__ == '__main__':
-    check_health()
+check_health()
