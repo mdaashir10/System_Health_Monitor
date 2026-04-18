@@ -15,8 +15,8 @@ CHAT_ID = os.environ.get("CHAT_ID")
 LOG_FILE = "health.log"
 
 # Setting limit
-CPU_THRESHOLD = 20
-RAM_THRESHOLD = 20
+CPU_THRESHOLD = 80
+RAM_THRESHOLD = 80
 
 def send_alert(message):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
