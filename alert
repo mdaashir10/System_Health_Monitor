@@ -2,15 +2,5 @@
 # Bash script to automate alerts
 
 source venv/bin/activate
-
-while true; do
-  python monitor.py
-  if -t 0.1 -n 1; then
-    break
-  fi
-  # Timer set to 5 min(300 sec)
-  sleep 300
-done
-
+python monitor.py
 deactivate
-echo Exited
