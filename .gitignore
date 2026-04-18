@@ -1,4 +1,5 @@
 .env
+health.log
 venv/
 __pycache__/
 *.pyc
